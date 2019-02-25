@@ -64,6 +64,14 @@ describe('Board', () => {
 
 		expect(game.winner()).toBeUndefined();
 	});
+	it('marks second player at end "4" as winner', () => {
+		const game = new Board(2);
+
+		game.takeTurn(1);
+		game.takeTurn(3);
+
+		expect(game.winner()).toBe(2);
+	});
 });
 
 // Diese kleinen Schritte, ich comitte mehrmals pro Test.
