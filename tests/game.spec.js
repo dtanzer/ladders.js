@@ -6,7 +6,7 @@ class Dice {
 }
 const dice = new Dice();
 
-class Ladders {
+class SnakesAndLadders {
 	constructor(links={}) {
 		this.links = links;
 	}
@@ -16,9 +16,9 @@ class Ladders {
 }
 
 class Game {
-	constructor(dice, ladders) {
+	constructor(dice, snakeAndLadders) {
 		this.dice = dice;
-		this.ladders = ladders;
+		this.snakeAndLadders = snakeAndLadders;
 		this.startPlace = 1;
 		this.endPlace = 10;
 		this.ended = false;
@@ -29,7 +29,7 @@ class Game {
 	}
 	nextTurn() {
 		const currentPlayer = this.players[0];
-		currentPlayer.place = this.ladders.from(currentPlayer.place + this.dice.roll());
+		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
 		
 		this.ended = currentPlayer.place >= this.endPlace;
 	}
@@ -61,7 +61,7 @@ describe('ladders', () => {
 	let ladders;
 	
 	beforeEach(()=>{
-		ladders = new Ladders({"4":7});
+		ladders = new SnakesAndLadders({"4":7});
 	});
 
 	it('exists', () => {
@@ -88,13 +88,13 @@ describe('player', () => {
 });
 
 describe('game', () => {
-	let ladders;
+	let snakesAndLadders;
 	let player1;
 	let game;
 
 	beforeEach(() => {
-		ladders = new Ladders();
-		game = new Game(dice, ladders);
+		snakesAndLadders = new SnakesAndLadders();
+		game = new Game(dice, snakesAndLadders);
 		player1 = new Player();
 	});
 
@@ -150,7 +150,7 @@ describe('game', () => {
 		});
 		it('moves player up ladder', () => {
 			dice.roll = () => 3;
-			ladders.from = () => 7;
+			snakesAndLadders.from = () => 7;
 
 			game.nextTurn();
 
