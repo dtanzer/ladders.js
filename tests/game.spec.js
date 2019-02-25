@@ -29,8 +29,8 @@ class Game {
 	}
 	nextTurn() {
 		const currentPlayer = this.players[0];
-		currentPlayer.place += this.dice.roll();
-		currentPlayer.place = this.ladders.from(currentPlayer.place);
+		currentPlayer.place = this.ladders.from(currentPlayer.place + this.dice.roll());
+		
 		this.ended = currentPlayer.place >= this.endPlace;
 	}
 	hasEnded() {
