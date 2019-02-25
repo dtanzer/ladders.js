@@ -39,7 +39,7 @@ class Ladders {
 	}
 }
 
-const ladders = new Ladders({"4":7});
+const ladders = new Ladders({"5":8});
 
 describe('dice', () => {
 	it('exists', () => {
@@ -127,6 +127,15 @@ describe('game', () => {
 		game.nextTurn();
 
 		expect(game.hasEnded()).toBe(true);
+	});
+	xit('player climbs ladder', () => {
+		game.start(player1);
+		dice.roll = () => 5;
+		ladders.from = (start) => 8;
+
+		game.nextTurn();
+
+		expect(player1.place).toBe(7);
 	});
 
 });
