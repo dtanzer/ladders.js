@@ -112,3 +112,5 @@ describe('game', () => {
 // wir achten nicht auf Baby Steps wie wir würden, wenn wir Baby Steps machen würden.
   // nach 2 Stunden P hofft immer noch auf compile und ist überrascht wenn nicht. 
   // Keine Incremente im 30 Sec Bereich. Warum nicht?
+// wir machen auch nicht genaues TDD. Wir schauen was der Constraint mit uns macht.
+  // focus?
