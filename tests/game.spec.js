@@ -16,7 +16,7 @@ class Board {
 	}
 	winner() {
 		for (let i=0; i<this.players.length;i++) {
-			if (this.players[i] === 4) {
+			if (this.players[i] >= 4) {
 				return i + 1;
 			}
 		}
@@ -68,7 +68,7 @@ describe('Board', () => {
 		const game = new Board(2);
 
 		game.takeTurn(1);
-		game.takeTurn(3);
+		game.takeTurn(4);
 
 		expect(game.winner()).toBe(2);
 	});
