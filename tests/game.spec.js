@@ -59,3 +59,5 @@ describe('game', () => {
 // TDDaiymi aus "Angst"
 // haben test geschrieben und dann auskommentiert und 3 schritte später erst bearbeitet -> wir haben gesehen es ist zu gross.
 // Schritt viel zu groß ("turn"), wir würden gerne reverten ;)
+// Angst code zu verlieren: "Dice" -> Schritt zu groß?
+	// D: "Hoffentlich committed" -> P: "Schritt zu groß"
