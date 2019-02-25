@@ -1,6 +1,10 @@
 
-const game = {};
-const player1 = {};
+const game = {
+	startPlace: 1,
+};
+const player1 = {
+	
+};
 
 describe('player', () => {
 	it('exists', () => {
@@ -9,8 +13,11 @@ describe('player', () => {
 });
 
 describe('game', () => {
-	it('we have a game', () => {
+	it('exists', () => {
 		expect(game).not.toBeFalsy();
+	});
+	it('has a startplace', () => {
+		expect(game.startPlace).not.toBeFalsy();
 	});
 	xit('starts, then player is at start place', () => {
 		game.start(player1);
