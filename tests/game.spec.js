@@ -29,14 +29,15 @@ class Game {
 		players.forEach(p => p.place = this.startPlace);
 	}
 	nextTurn() {
-		if (!this.ended) {
-			const currentPlayer = this.players[this.current];
-			currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
-
-			this.ended = currentPlayer.place >= this.endPlace;
-
-			this.current = (this.current + 1) % this.players.length;
+		if (this.ended) {
+			return;
 		}
+		const currentPlayer = this.players[this.current];
+		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
+
+		this.ended = currentPlayer.place >= this.endPlace;
+
+		this.current = (this.current + 1) % this.players.length;
 	}
 	hasEnded() {
 		return this.ended;
