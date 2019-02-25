@@ -15,7 +15,7 @@ class Game {
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
 	winner() {
-		if (this.players[0]===4) {
+		if (this.players[0] === 4) {
 			return 1;
 		}
 	}
