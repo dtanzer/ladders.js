@@ -9,7 +9,10 @@
     "tcr": "jest && bash ./git_commit || bash ./git_revert"
   },
   "watch": {
-    "tcr": "{src,tests}/*.js"
+    "tcr": {
+      "patterns": "{src,tests}/*.js",
+      "quiet": true
+    }
   },
   "repository": {
     "type": "git",
