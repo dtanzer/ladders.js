@@ -10,7 +10,7 @@ class Game {
 		return this.position[numberOfPlayer-1];
 	}
 	takeTurn() {
-		this.position[this.current]++;
+		this.position[this.current++]++;
 	}
 }
 
@@ -20,10 +20,17 @@ describe('Game', () => {
 		expect(game.positionOf(1)).toBe(1);
 		expect(game.positionOf(2)).toBe(1);
 	});
-	it('moves players on turns', () => {
+	it('moves players', () => {
 		const game = new Game(2);
 		game.takeTurn();
 		expect(game.positionOf(1)).toBe(2);
 		expect(game.positionOf(2)).toBe(1);
+	});
+	it('moves players on turns', () => {
+		const game = new Game(2);
+		game.takeTurn();
+		game.takeTurn();
+		expect(game.positionOf(1)).toBe(2);
+		expect(game.positionOf(2)).toBe(2);
 	});
 });
