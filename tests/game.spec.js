@@ -47,7 +47,6 @@ describe('Game', () => {
 		game.takeTurn();
 		game.takeTurn();
 		game.takeTurn();
-		game.takeTurn();
 		expect(game.winner()).toBe(1);
 	});
 	it('has no winner below end "4"', () => {
