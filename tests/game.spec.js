@@ -52,18 +52,18 @@ describe('game', () => {
 	it('exists', () => {
 		expect(game).not.toBeFalsy();
 	});
-	it('has a startplace', () => {
+	it('has a start place', () => {
 		expect(game.startPlace).not.toBeFalsy();
 	});
 	it('starts, then player is at start place', () => {
 		game.start(player1);
 		expect(player1.place).toBe(game.startPlace);
 	});
-	it('can take turns', () => {
+	it('allows taking turns', () => {
 		game.start(player1);
 		game.nextTurn();
 	});
-	it('turn moves player', () => {
+	it('moves player on turn', () => {
 		game.start(player1);
 		dice.roll = () => 3;
 		const lastPlace = player1.place;
@@ -72,10 +72,10 @@ describe('game', () => {
 
 		expect(player1.place).toBe(lastPlace + 3);
 	});
-	it('has a endplace', () => {
+	it('has an end place', () => {
 		expect(game.endPlace).not.toBeFalsy();
 	});
-	it('player wins at end place', () => {
+	it('ends when player is at end place', () => {
 		game.start(player1);
 		dice.roll = () => 3;
 		player1.place = game.endPlace-3;
