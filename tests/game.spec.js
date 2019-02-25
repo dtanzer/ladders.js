@@ -27,6 +27,9 @@ class Board {
 }
 
 describe('Board', () => {
+
+	// TODO remove duplication of game = new Board(2)
+
 	it('puts all players at position 1', () => {
 		const game = new Board(2);
 		expect(game.positionOf(1)).toBe(1);
@@ -50,6 +53,17 @@ describe('Board', () => {
 		expect(game.positionOf(1)).toBe(3);
 		expect(game.positionOf(2)).toBe(2);
 	});
+	it('marks second player at end "4" as winner', () => {
+		const game = new Board(2);
+
+		game.takeTurn(1);
+		game.takeTurn(4);
+
+		expect(game.winner()).toBe(2);
+	});
+
+	// TODO remove duplication of game = new Board(1)
+
 	it('marks first player at end "4" as winner', () => {
 		const game = new Board(1);
 		
@@ -66,14 +80,6 @@ describe('Board', () => {
 		game.takeTurn(1);
 
 		expect(game.winner()).toBeUndefined();
-	});
-	it('marks second player at end "4" as winner', () => {
-		const game = new Board(2);
-
-		game.takeTurn(1);
-		game.takeTurn(4);
-
-		expect(game.winner()).toBe(2);
 	});
 });
 
