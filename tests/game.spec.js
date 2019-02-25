@@ -25,7 +25,6 @@ class Game {
 	}
 }
 
-let game;
 const player1 = {
 	// TODO sehe das Feld nicht?
 };
@@ -79,6 +78,8 @@ describe('player', () => {
 });
 
 describe('game', () => {
+	let ladders;
+	let game;
 
 	beforeEach(() => {
 		game = new Game(dice);
