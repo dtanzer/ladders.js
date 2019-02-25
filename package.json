@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "watch": "npm-watch",
-    "tcr": "jest && bash ./git_commit || echo bad"
+    "tcr": "jest && bash ./git_commit || bash ./git_revert"
   },
   "watch": {
     "tcr": "{src,tests}/*.js"
