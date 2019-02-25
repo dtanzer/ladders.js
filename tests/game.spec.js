@@ -1,7 +1,11 @@
-class Game {}
+class Game {
+	constructor(numberOfPlayers) {
+		
+	}
+}
 
 describe('Game', () => {
-	it('player 1 starts game at position 1', () => {
-		const game = new Game();
+	it('all players starts game at position 1', () => {
+		const game = new Game(2);
 	});
 });
