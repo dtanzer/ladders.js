@@ -26,9 +26,10 @@ class Game {
 	}
 }
 
-const player1 = {
+class Player {
 	// TODO sehe das Feld nicht?
-};
+}
+let player1 = new Player();
 
 class Ladders {
 	constructor(links={}) {
