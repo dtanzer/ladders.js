@@ -1,4 +1,7 @@
 const dice = {
+	roll() {
+		return 1;
+	}
 };
 
 const game = {
@@ -14,6 +17,10 @@ const player1 = {
 describe('dice', () => {
 	it('exists', () => {
 		expect(dice).not.toBeFalsy();
+	});
+	it('returns numer between 1 and 6 on "roll"', () => {
+		const eyes = dice.roll();
+		expect(eyes).toBeGreaterThanOrEqual(1);
 	});
 });
 
