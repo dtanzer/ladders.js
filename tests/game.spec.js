@@ -1,7 +1,8 @@
 
+const game = {};
+
 describe('game', () => {
 	it('we have a game', () => {
-		const game = {};
 		expect(game).not.toBeFalsy();
 	});
 });
