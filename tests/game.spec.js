@@ -4,12 +4,13 @@ class Game {
 		for (let i=0;i<numberOfPlayers;i++) {
 			this.position[i] = 1;
 		}
+		this.current = 0;
 	}
 	positionOf(numberOfPlayer) {
 		return this.position[numberOfPlayer-1];
 	}
 	takeTurn() {
-		this.position[0]++;
+		this.position[this.current]++;
 	}
 }
 
