@@ -6,6 +6,15 @@ class Dice {
 }
 const dice = new Dice();
 
+class Ladders {
+	constructor(links={}) {
+		this.links = links;
+	}
+	from(start) {
+		return this.links[start];
+	}
+}
+
 class Game {
 	constructor(dice) {
 		this.dice = dice;
@@ -28,16 +37,6 @@ class Game {
 
 class Player {
 	// TODO sehe das Feld nicht?
-}
-let player1 = new Player();
-
-class Ladders {
-	constructor(links={}) {
-		this.links = links;
-	}
-	from(start) {
-		return this.links[start];
-	}
 }
 
 describe('dice', () => {
@@ -75,9 +74,11 @@ describe('ladders', () => {
 
 describe('player', () => {
 	let player1;
+
 	beforeEach(()=>{
 		player1 = new Player();
 	});
+
 	it('exists', () => {
 		expect(player1).not.toBeFalsy();
 	});
@@ -89,9 +90,9 @@ describe('game', () => {
 	let game;
 
 	beforeEach(() => {
+		ladders = new Ladders();
 		game = new Game(dice);
 		player1 = new Player();
-		ladders = new Ladders();
 	});
 
 	it('exists', () => {
@@ -144,6 +145,7 @@ describe('game', () => {
 	});
 
 });
+
 // test list
 // * niemand kann sich bewegen wenn es aus ist
 
