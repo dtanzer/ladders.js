@@ -16,8 +16,8 @@ class Game {
 	}
 	winner() {
 		for (let i=0; i<this.players.length;i++) {
-			if (this.players[0] === 4) {
-				return 0+1;
+			if (this.players[i] === 4) {
+				return i + 1;
 			}
 		}
 	}
