@@ -28,9 +28,10 @@ class Game {
 		this.players[0].place = this.startPlace;
 	}
 	nextTurn() {
-		this.players[0].place += this.dice.roll();
-		this.players[0].place = this.ladders.from(this.players[0].place);
-		this.ended = this.players[0].place >= this.endPlace;
+		const currentPlayer = this.players[0];
+		currentPlayer.place += this.dice.roll();
+		currentPlayer.place = this.ladders.from(currentPlayer.place);
+		this.ended = currentPlayer.place >= this.endPlace;
 	}
 	hasEnded() {
 		return this.ended;
