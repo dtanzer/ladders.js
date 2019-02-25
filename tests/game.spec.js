@@ -30,12 +30,17 @@ const player1 = {
 	// TODO sehe das Feld nicht?
 };
 
-const ladders = {
-	"4": 7,
+class Ladders {
+	constructor() {
+		this.x = [];
+		this.x[4] = 7;
+	}
 	from(start) {
-		return this[start];
-	},
-};
+		return this.x[start];
+	}
+}
+
+const ladders = new Ladders();
 
 describe('dice', () => {
 	it('exists', () => {
