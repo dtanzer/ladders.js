@@ -1,17 +1,17 @@
 class Game {
 	constructor(numberOfPlayers) {
-		this.position = [];
+		this.players = [];
 		for (let i=0; i<numberOfPlayers; i++) {
-			this.position[i] = 1;
+			this.players[i] = 1;
 		}
-		this.current = 0;
+		this.currentPlayer = 0;
 	}
-	positionOf(numberOfPlayer) {
-		return this.position[numberOfPlayer-1];
+	positionOf(player) {
+		return this.players[player-1];
 	}
 	takeTurn() {
-		this.position[this.current]++;
-		this.current = (this.current + 1) % this.position.length;
+		this.players[this.currentPlayer]++;
+		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
 }
 
