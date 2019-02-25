@@ -47,7 +47,10 @@ class Game {
 }
 
 class Player {
-	// TODO sehe das Feld nicht?
+	// sehe das Feld nicht?
+	constructor() {
+		this.place = null;
+	}
 }
 
 describe('dice', () => {
