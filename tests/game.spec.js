@@ -1,4 +1,5 @@
 const dice = {
+	// eigentlich ist es nur eine function, aber dann schwerer stubbar.
 	roll() {
 		return Math.floor(Math.random() * 6 + 1);
 	}
@@ -17,7 +18,7 @@ class Game {
 	}
 	nextTurn() {
 		this.players[0].place += this.dice.roll();
-		this.ended = this.players[0].place === this.endPlace;
+		this.ended = this.players[0].place >= this.endPlace;
 	}
 	hasEnded() {
 		return this.ended;
@@ -26,7 +27,7 @@ class Game {
 
 let game;
 const player1 = {
-
+	// TODO sehe das Feld nicht?
 };
 
 describe('dice', () => {
@@ -90,6 +91,15 @@ describe('game', () => {
 		game.start(player1);
 		dice.roll = () => 3;
 		player1.place = game.endPlace-3;
+
+		game.nextTurn();
+
+		expect(game.hasEnded()).toBe(true);
+	});
+	it('ends when player is after end place', () => {
+		game.start(player1);
+		dice.roll = () => 3;
+		player1.place = game.endPlace - 2;
 
 		game.nextTurn();
 
