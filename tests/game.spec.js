@@ -1,9 +1,12 @@
 class Board {
 	constructor(numberOfPlayers) {
+		this.size = 4;
+
 		this.players = [];
 		for (let player=0; player<numberOfPlayers; player++) {
 			this.players[player] = 1;
 		}
+		
 		this.currentPlayer = 0;
 	}
 	positionOf(player) {
@@ -16,7 +19,7 @@ class Board {
 	}
 	winner() {
 		for (let player=0; player<this.players.length;player++) {
-			if (this.players[player] >= 4) {
+			if (this.players[player] >= this.size) {
 				return player + 1;
 			}
 		}
