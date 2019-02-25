@@ -32,10 +32,10 @@ const player1 = {
 
 class Ladders {
 	constructor(links={}) {
-		this.x = links;
+		this.links = links;
 	}
 	from(start) {
-		return this.x[start];
+		return this.links[start];
 	}
 }
 
