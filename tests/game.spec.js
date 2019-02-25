@@ -1,3 +1,5 @@
+const dice = {
+};
 
 const game = {
 	startPlace: 1,
@@ -26,6 +28,15 @@ describe('game', () => {
 		game.start(player1);
 		expect(player1.place).toBe(game.startPlace);
 	});
+	xit('turn', () => {
+		game.start(player1);
+		dice.nextRoll = 3;
+		const lastPlace = player1.place;
+
+		game.nextTurn();
+
+		expect(player1.place).toBe(lastPlace + 3);
+	});
 });
 
 // copy existing test so it does not get reverted for new file
@@ -34,3 +45,4 @@ describe('game', () => {
 // every spell fix is a commit, yeah
 // TDDaiymi aus "Angst"
 // haben test geschrieben und dann auskommentiert und 3 schritte später erst bearbeitet -> wir haben gesehen es ist zu gross.
+// Schritt viel zu groß ("turn"), wir würden gerne reverten ;)
