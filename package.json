@@ -1,0 +1,23 @@
+{
+  "name": "ladders.js",
+  "version": "0.0.1",
+  "description": "A ladders game for a \"test && commit || revert\" kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtanzer/ladders.js.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dtanzer/ladders.js/issues"
+  },
+  "homepage": "https://github.com/dtanzer/ladders.js#readme",
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "sinon": "^7.2.4"
+  }
+}
