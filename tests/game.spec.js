@@ -102,17 +102,22 @@ describe('game', () => {
 		expect(game.startPlace).not.toBeFalsy();
 	});
 
+	it('has an end place', () => {
+		expect(game.endPlace).not.toBeFalsy();
+	});
+
 	describe('started', () => {
-		it('starts, then player is at start place', () => {
+		beforeEach(() => {
 			game.start(player1);
+		});
+
+		it('starts, then player is at start place', () => {
 			expect(player1.place).toBe(game.startPlace);
 		});
 		it('allows taking turns', () => {
-			game.start(player1);
 			game.nextTurn();
 		});
 		it('moves player on turn', () => {
-			game.start(player1);
 			dice.roll = () => 3;
 			const lastPlace = player1.place;
 
@@ -121,14 +126,10 @@ describe('game', () => {
 			expect(player1.place).toBe(lastPlace + 3);
 			expect(game.hasEnded()).toBe(false);
 		});
-		it('has an end place', () => {
-			expect(game.endPlace).not.toBeFalsy();
-		});
 		it('is not ended', () => {
 			expect(game.hasEnded()).toBe(false);
 		});
 		it('ends when player is at end place', () => {
-			game.start(player1);
 			dice.roll = () => 3;
 			player1.place = game.endPlace-3;
 
@@ -137,7 +138,6 @@ describe('game', () => {
 			expect(game.hasEnded()).toBe(true);
 		});
 		it('ends when player is after end place', () => {
-			game.start(player1);
 			dice.roll = () => 3;
 			player1.place = game.endPlace - 2;
 
