@@ -1,9 +1,10 @@
-const dice = {
+class Dice {
 	// eigentlich ist es nur eine function, aber dann schwerer stubbar.
 	roll() {
 		return Math.floor(Math.random() * 6 + 1);
 	}
-};
+}
+const dice = new Dice();
 
 class Game {
 	constructor(dice) {
