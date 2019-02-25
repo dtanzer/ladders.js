@@ -79,3 +79,4 @@ describe('Board', () => {
 // Tests entstehen schrittweise.
 // Refactoren oft auf die Lösung und dann den Test hinzufügen für allgemeinen Code.
 // Oft, die Struktur die man anpeilt wird eine darunterliegende Struktur.
+// Regel? Immer nur im Test oder nur im Produktionscode was ändern. Dadurch schreibe ich Tests oft nachher.
