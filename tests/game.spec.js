@@ -32,7 +32,7 @@ describe('Board', () => {
 	it('moves players with roll 1', () => {
 		const game = new Board(2);
 
-		game.takeTurn();
+		game.takeTurn(1);
 
 		expect(game.positionOf(1)).toBe(2);
 		expect(game.positionOf(2)).toBe(1);
@@ -40,9 +40,9 @@ describe('Board', () => {
 	it('moves players with roll 1 on taking turns', () => {
 		const game = new Board(2);
 
-		game.takeTurn();
-		game.takeTurn();
-		game.takeTurn();
+		game.takeTurn(1);
+		game.takeTurn(1);
+		game.takeTurn(1);
 
 		expect(game.positionOf(1)).toBe(3);
 		expect(game.positionOf(2)).toBe(2);
@@ -50,17 +50,17 @@ describe('Board', () => {
 	it('marks first player at end "4" as winner', () => {
 		const game = new Board(1);
 		
-		game.takeTurn();
-		game.takeTurn();
-		game.takeTurn();
+		game.takeTurn(1);
+		game.takeTurn(1);
+		game.takeTurn(1);
 
 		expect(game.winner()).toBe(1);
 	});
 	it('has no winner below end "4"', () => {
 		const game = new Board(1);
 
-		game.takeTurn();
-		game.takeTurn();
+		game.takeTurn(1);
+		game.takeTurn(1);
 
 		expect(game.winner()).toBeUndefined();
 	});
