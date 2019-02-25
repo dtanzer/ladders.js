@@ -21,6 +21,7 @@ describe('dice', () => {
 	it('returns numer between 1 and 6 on "roll"', () => {
 		const eyes = dice.roll();
 		expect(eyes).toBeGreaterThanOrEqual(1);
+		expect(eyes).toBeLessThanOrEqual(6);
 	});
 });
 
