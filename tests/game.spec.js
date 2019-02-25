@@ -25,6 +25,11 @@ describe('dice', () => {
 			//Wir kriegen den Test auch mit 2. Assert nicht rot. Egal -> kein TDD
 			expect(eyes).toBeLessThanOrEqual(6);
 		});
+
+		it('returns only whole numbers', () => {
+			const eyes = dice.roll();
+			expect(eyes).toBe(Math.floor(eyes));
+		});
 	}
 });
 
