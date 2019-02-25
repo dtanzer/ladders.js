@@ -54,7 +54,7 @@ describe('game', () => {
 		game.start(player1);
 		game.nextTurn();
 	});
-	xit('turn', () => {
+	it('turn', () => {
 		game.start(player1);
 		dice.roll = () => 3;
 		const lastPlace = player1.place;
