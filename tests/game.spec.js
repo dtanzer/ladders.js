@@ -2,9 +2,10 @@ class Game {
 	constructor(numberOfPlayers) {
 		this.position = [];
 		this.position[0] = 1;
+		this.position[1] = 1;
 	}
 	positionOf(numberOfPlayer) {
-		return this.position[0];
+		return this.position[numberOfPlayer-1];
 	}
 	takeTurn() {
 		this.position[0]++;
