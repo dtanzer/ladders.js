@@ -1,12 +1,14 @@
 class Game {
 	constructor(numberOfPlayers) {
-		this.position = 1;
+		this.position = [];
+		this.position[0] = 1;
+		this.position[1] = 1;
 	}
 	positionOf(numberOfPlayer) {
-		return this.position;
+		return this.position[numberOfPlayer];
 	}
 	takeTurn() {
-		this.position++;
+		this.position[0]++;
 	}
 }
 
@@ -20,5 +22,6 @@ describe('Game', () => {
 		const game = new Game(2);
 		game.takeTurn();
 		expect(game.positionOf(1)).toBe(2);
+		expect(game.positionOf(2)).toBe(1);
 	});
 });
