@@ -36,4 +36,6 @@ describe('Game', () => {
 		expect(game.positionOf(1)).toBe(3);
 		expect(game.positionOf(2)).toBe(2);
 	});
+	it('marks first player at end as winner', () => {
+	});
 });
