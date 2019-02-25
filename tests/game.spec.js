@@ -34,6 +34,7 @@ class Game {
 		if (this.ended) {
 			return;
 		}
+		// TODO feature envy for player.place
 		const currentPlayer = this.players[this.current];
 		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
 
@@ -47,7 +48,6 @@ class Game {
 }
 
 class Player {
-	// sehe das Feld nicht?
 	constructor() {
 		this.place = null;
 	}
