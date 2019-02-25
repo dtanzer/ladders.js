@@ -25,7 +25,7 @@ class Game {
 	}
 	start(...players) { // just did it because I could ;-)
 		this.players = players;
-		this.players[0].place = this.startPlace;
+		players.forEach(p => p.place = this.startPlace);
 	}
 	nextTurn() {
 		const currentPlayer = this.players[0];
@@ -163,6 +163,20 @@ describe('game', () => {
 	describe('started two player game', () => {
 		beforeEach(() => {
 			game.start(player1, player2);
+		});
+
+		it('then player2 is at start place', () => {
+			expect(player2.place).toBe(game.startPlace);
+		});
+		xit('moves players on turns', () => {
+			dice.roll = () => 5;
+			game.nextTurn();
+
+			dice.roll = () => 6;
+			game.nextTurn();
+
+			expect(player1.place).toBe(1 + 5);
+			expect(player2.place).toBe(1 + 6);
 		});
 	});
 });
