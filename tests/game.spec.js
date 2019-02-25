@@ -138,3 +138,4 @@ describe('game', () => {
   // Keine Incremente im 30 Sec Bereich. Warum nicht?
 // wir machen auch nicht genaues TDD. Wir schauen was der Constraint mit uns macht.
   // focus?
+// die exists tests sind blöd. Aber wir brauchen sie?
