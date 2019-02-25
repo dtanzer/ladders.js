@@ -1,6 +1,6 @@
 const dice = {
 	roll() {
-		return 1;
+		return Math.floor(Math.random()*6 + 1);
 	}
 };
 
@@ -21,6 +21,8 @@ describe('dice', () => {
 	it('returns numer between 1 and 6 on "roll"', () => {
 		const eyes = dice.roll();
 		expect(eyes).toBeGreaterThanOrEqual(1);
+		//Wir bekommen den Test durch 2. Assert nicht mehr "rot" -> egal, weil kein TDD
+		expect(eyes).toBeGreaterThanOrEqual(6);
 	});
 });
 
