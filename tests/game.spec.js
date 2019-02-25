@@ -57,5 +57,7 @@ describe('Game', () => {
 		expect(game.winner()).toBeUndefined();
 		game.takeTurn();
 		expect(game.winner()).toBeUndefined();
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
 	});
 });
