@@ -6,9 +6,8 @@ const dice = {
 };
 
 class Game {
-	constructor(dice, ladders) {
+	constructor(dice) {
 		this.dice = dice;
-		this.ladders = ladders;
 		this.startPlace = 1;
 		this.endPlace = 10;
 		this.ended = false;
@@ -78,7 +77,7 @@ describe('player', () => {
 describe('game', () => {
 
 	beforeEach(() => {
-		game = new Game(dice, ladders);
+		game = new Game(dice);
 	});
 
 	it('exists', () => {
