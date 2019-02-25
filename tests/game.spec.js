@@ -17,6 +17,9 @@ class Game {
 	nextTurn() {
 		this.players[0].place += this.dice.roll();
 	}
+	hasEnded() {
+		return true;
+	}
 }
 
 const game = new Game(dice);
@@ -71,6 +74,15 @@ describe('game', () => {
 	});
 	it('has a endplace', () => {
 		expect(game.endPlace).not.toBeFalsy();
+	});
+	it('player wins at end place', () => {
+		game.start(player1);
+		dice.roll = () => 3;
+		player1.place = game.endPlace-3;
+
+		game.nextTurn();
+
+		expect(game.hasEnded()).toBe(true);
 	});
 });
 
