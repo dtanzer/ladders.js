@@ -31,11 +31,10 @@ const player1 = {
 };
 
 const ladders = {
+	"4": 7,
 	from(start) {
-		if (start === 4) {
-			return 7;
-		}
-	}
+		return this[start];
+	},
 };
 
 describe('dice', () => {
