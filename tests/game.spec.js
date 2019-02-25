@@ -34,7 +34,7 @@ class Game {
 		
 		this.ended = currentPlayer.place >= this.endPlace;
 		
-		this.current++;
+		this.current = (this.current + 1) % this.players.length;
 	}
 	hasEnded() {
 		return this.ended;
@@ -180,6 +180,14 @@ describe('game', () => {
 
 			expect(player1.place).toBe(1 + 5);
 			expect(player2.place).toBe(1 + 6);
+		});
+		it('moves player1 on third turn', () => {
+			dice.roll = () => 1;
+			game.nextTurn();
+			game.nextTurn();
+			game.nextTurn();
+
+			expect(player1.place).toBe(1 + 1 + 1);
 		});
 	});
 });
