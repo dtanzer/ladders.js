@@ -33,6 +33,8 @@ class Game {
 		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
 		
 		this.ended = currentPlayer.place >= this.endPlace;
+		
+		this.current++;
 	}
 	hasEnded() {
 		return this.ended;
@@ -169,7 +171,7 @@ describe('game', () => {
 		it('then player2 is at start place', () => {
 			expect(player2.place).toBe(game.startPlace);
 		});
-		xit('moves players on turns', () => {
+		it('moves players on turns', () => {
 			dice.roll = () => 5;
 			game.nextTurn();
 
