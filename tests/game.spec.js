@@ -153,3 +153,4 @@ describe('game', () => {
 // wir machen auch nicht genaues TDD. Wir schauen was der Constraint mit uns macht.
   // focus?
 // die exists tests sind blöd. Aber wir brauchen sie?
+// ? ich habe Code geschrieben weil ich weis dass ich ihn brauche für den nächsten Test. Ist das gemogelt?
