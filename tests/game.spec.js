@@ -29,12 +29,14 @@ class Game {
 		players.forEach(p => p.place = this.startPlace);
 	}
 	nextTurn() {
-		const currentPlayer = this.players[this.current];
-		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
-		
-		this.ended = currentPlayer.place >= this.endPlace;
-		
-		this.current = (this.current + 1) % this.players.length;
+		if (!this.ended) {
+			const currentPlayer = this.players[this.current];
+			currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
+
+			this.ended = currentPlayer.place >= this.endPlace;
+
+			this.current = (this.current + 1) % this.players.length;
+		}
 	}
 	hasEnded() {
 		return this.ended;
@@ -160,6 +162,15 @@ describe('game', () => {
 			game.nextTurn();
 
 			expect(player1.place).toBe(7);
+		});
+		it('does not move after ended game', () => {
+			dice.roll = () => 3;
+			player1.place = game.endPlace - 3;
+			game.nextTurn();
+
+			game.nextTurn();
+
+			expect(player1.place).toBe(game.endPlace);
 		});
 	});
 
