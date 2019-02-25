@@ -31,6 +31,9 @@ const player1 = {
 };
 
 const ladders = {
+	from(start) {
+		return 7;
+	}
 };
 
 describe('dice', () => {
@@ -51,6 +54,9 @@ describe('dice', () => {
 describe('ladders', () => {
 	it('exists', () => {
 		expect(ladders).not.toBeFalsy();
+	});
+	it('has a ladder from 4 to 7', () => {
+		expect(ladders.from(4)).toBe(7);
 	});
 });
 
