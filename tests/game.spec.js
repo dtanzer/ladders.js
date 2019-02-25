@@ -57,21 +57,21 @@ describe('dice', () => {
 	});
 });
 
-describe('ladders', () => {
-	let ladders;
+describe('snakesAndLaddersladders', () => {
+	let snakesAndLadders;
 	
 	beforeEach(()=>{
-		ladders = new SnakesAndLadders({"4":7});
+		snakesAndLadders = new SnakesAndLadders({"4":7});
 	});
 
 	it('exists', () => {
-		expect(ladders).not.toBeFalsy();
+		expect(snakesAndLadders).not.toBeFalsy();
 	});
 	it('has a ladder from 4 to 7', () => {
-		expect(ladders.from(4)).toBe(7);
+		expect(snakesAndLadders.from(4)).toBe(7);
 	});
 	it('has no ladder from 3', () => {
-		expect(ladders.from(3)).toBe(3);
+		expect(snakesAndLadders.from(3)).toBe(3);
 	});
 });
 
@@ -161,6 +161,7 @@ describe('game', () => {
 
 // test list
 // * niemand kann sich bewegen wenn es aus ist
+// * snakes and ladders rendern unterschiedlich
 
 // ---------
 
