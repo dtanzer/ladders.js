@@ -138,13 +138,16 @@ describe('game', () => {
 			expect(game.hasEnded()).toBe(true);
 		});
 		it('ends when player is after end place', () => {
-			dice.roll = () => 3;
 			player1.place = game.endPlace - 2;
 
-			game.nextTurn();
-
-			expect(game.hasEnded()).toBe(true);
+			onRollThree(() => qexpect(game.hasEnded()).toBe(true));
 		});
+
+		function onRollThree(assertion) {
+			dice.roll = () => 3;
+			game.nextTurn();
+			assertion();
+		}
 	});
 });
 
