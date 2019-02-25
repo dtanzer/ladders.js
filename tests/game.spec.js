@@ -90,12 +90,14 @@ describe('player', () => {
 describe('game', () => {
 	let snakesAndLadders;
 	let player1;
+	let player2;
 	let game;
 
 	beforeEach(() => {
 		snakesAndLadders = new SnakesAndLadders();
 		game = new Game(dice, snakesAndLadders);
 		player1 = new Player();
+		player2 = new Player();
 	});
 
 	it('exists', () => {
@@ -155,6 +157,12 @@ describe('game', () => {
 			game.nextTurn();
 
 			expect(player1.place).toBe(7);
+		});
+	});
+
+	describe('started two player game', () => {
+		beforeEach(() => {
+			game.start(player1, player2);
 		});
 	});
 });
