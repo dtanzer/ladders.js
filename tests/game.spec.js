@@ -3,7 +3,7 @@ const game = {};
 const player1 = {};
 
 describe('player', () => {
-	it('we have a player', () => {
+	it('exists', () => {
 		expect(player1).not.toBeFalsy();
 	});
 });
