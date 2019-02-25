@@ -1,9 +1,9 @@
-PASS tests/foo.spec.js
+PASS tests/game.spec.js
   foo
-    √ bar (5ms)
+    √ bar
 
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.837s
+Time:        3.379s
 Ran all test suites.
