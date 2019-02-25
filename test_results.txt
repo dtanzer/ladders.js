@@ -1,0 +1,22 @@
+FAIL tests/game.spec.js
+  foo
+    × bar (16ms)
+
+  ● foo › bar
+
+    TypeError: expect(...).toBeTruthyyy is not a function
+
+      1 | describe('foo', () => {
+      2 | 	it('bar', () => {
+    > 3 | 		expect(true).toBeTruthyyy();
+        | 		             ^
+      4 | 	});
+      5 | });
+
+      at Object.toBeTruthyyy (tests/game.spec.js:3:16)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.791s
+Ran all test suites.

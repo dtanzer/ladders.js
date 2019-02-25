@@ -1,5 +1,5 @@
 describe('foo', () => {
 	it('bar', () => {
-		expect(true).toBeTruthy();
+		expect(true).toBeTruthyyy();
 	});
 });
