@@ -47,4 +47,8 @@ describe('Game', () => {
 		game.takeTurn();
 		expect(game.winner()).toBe(1);
 	});
+	it('has no winner below end "4"', () => {
+		const game = new Game(1);
+		
+	});
 });
