@@ -9,7 +9,7 @@ class Game {
 		this.dice = dice;
 		this.startPlace = 1;
 	}
-	start(...players) {
+	start(...players) { // just did it because I could ;-)
 		this.players = players;
 		this.players[0].place = this.startPlace;
 	}
@@ -59,7 +59,7 @@ describe('game', () => {
 		game.start(player1);
 		game.nextTurn();
 	});
-	it('turn', () => {
+	it('turn moves player', () => {
 		game.start(player1);
 		dice.roll = () => 3;
 		const lastPlace = player1.place;
