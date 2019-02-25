@@ -1,4 +1,4 @@
-class Game {
+class Board {
 	constructor(numberOfPlayers) {
 		this.players = [];
 		for (let i=0; i<numberOfPlayers; i++) {
@@ -23,22 +23,22 @@ class Game {
 	}
 }
 
-describe('Game', () => {
-	it('starts all players at position 1', () => {
-		const game = new Game(2);
+describe('Board', () => {
+	it('puts all players at position 1', () => {
+		const game = new Board(2);
 		expect(game.positionOf(1)).toBe(1);
 		expect(game.positionOf(2)).toBe(1);
 	});
 	it('moves players with roll 1', () => {
-		const game = new Game(2);
+		const game = new Board(2);
 
 		game.takeTurn();
-		
+
 		expect(game.positionOf(1)).toBe(2);
 		expect(game.positionOf(2)).toBe(1);
 	});
 	it('moves players with roll 1 on taking turns', () => {
-		const game = new Game(2);
+		const game = new Board(2);
 
 		game.takeTurn();
 		game.takeTurn();
@@ -48,7 +48,7 @@ describe('Game', () => {
 		expect(game.positionOf(2)).toBe(2);
 	});
 	it('marks first player at end "4" as winner', () => {
-		const game = new Game(1);
+		const game = new Board(1);
 		
 		game.takeTurn();
 		game.takeTurn();
@@ -57,7 +57,7 @@ describe('Game', () => {
 		expect(game.winner()).toBe(1);
 	});
 	it('has no winner below end "4"', () => {
-		const game = new Game(1);
+		const game = new Board(1);
 
 		game.takeTurn();
 		game.takeTurn();
