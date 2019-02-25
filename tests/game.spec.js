@@ -18,9 +18,9 @@ class SnakesAndLadders {
 class Game {
 	constructor(dice, snakeAndLadders) {
 		this.dice = dice;
-		this.snakeAndLadders = snakeAndLadders;
+		this.snakeAndLadders = snakeAndLadders; // also in Board class
 
-		this.startPlace = 1; // could be from outside
+		this.startPlace = 1; // could be from outside, in Board class
 		this.endPlace = 10;
 
 		this.current = 0;
@@ -207,7 +207,6 @@ describe('game', () => {
 });
 
 // test list
-// * niemand kann sich bewegen wenn es aus ist
 // * snakes and ladders rendern unterschiedlich
 
 // ---------
