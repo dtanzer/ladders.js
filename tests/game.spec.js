@@ -6,4 +6,5 @@ describe('foo', () => {
 
 // copy existing test so it does not get reverted for new file
 // we cannot create guiding test
-// we commit after comments to not loose them
+// we commit after comments to not lose them
+// every spell fix is a commit, yeah
