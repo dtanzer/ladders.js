@@ -5,7 +5,8 @@ const dice = {
 };
 
 class Game {
-	constructor() {
+	constructor(dice) {
+		this.dice = dice;
 		this.startPlace = 1;
 	}
 	start(player) {
@@ -13,11 +14,11 @@ class Game {
 		player.place = this.startPlace;
 	}
 	nextTurn() {
-		this.player.place += dice.roll();
+		this.player.place += this.dice.roll();
 	}
 }
 
-const game = new Game();
+const game = new Game(dice);
 const player1 = {
 
 };
