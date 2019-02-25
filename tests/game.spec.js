@@ -4,16 +4,20 @@ const dice = {
 	}
 };
 
-const game = {
-	startPlace: 1,
+class Game {
+	constructor() {
+		this.startPlace = 1;
+	}
 	start(player) {
 		this.player = player;
 		player.place = this.startPlace;
-	},
+	}
 	nextTurn() {
 		this.player.place += dice.roll();
-	},
-};
+	}
+}
+
+const game = new Game();
 const player1 = {
 
 };
