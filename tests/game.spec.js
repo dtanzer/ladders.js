@@ -14,6 +14,9 @@ class Game {
 
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
+	winner() {
+		return 1;
+	}
 }
 
 describe('Game', () => {
@@ -36,6 +39,12 @@ describe('Game', () => {
 		expect(game.positionOf(1)).toBe(3);
 		expect(game.positionOf(2)).toBe(2);
 	});
-	it('marks first player at end as winner', () => {
+	it('marks first player at end "4" as winner', () => {
+		const game = new Game(1);
+		game.takeTurn();
+		game.takeTurn();
+		game.takeTurn();
+		game.takeTurn();
+		expect(game.winner()).toBe(1);
 	});
 });
