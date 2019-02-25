@@ -73,5 +73,7 @@ describe('game', () => {
 // haben test geschrieben und dann auskommentiert und 3 schritte später erst bearbeitet -> wir haben gesehen es ist zu gross.
 // Schritt viel zu groß ("turn"), wir würden gerne reverten ;)
 // Angst code zu verlieren: "Dice" -> Schritt zu groß?
-	// D: "Hoffentlich committed" -> P: "Schritt zu groß"
+  // D: "Hoffentlich committed" -> P: "Schritt zu groß"
 // "Du tippst zu schnell, tests noch nicht fertig" --> Unser Test-script ist schon zu langsam (9s)
+// Tests auskommentieren widerspricht der Idee irgendwie?
+  // einfach auskommentieren wollen wir nicht mehr machen zur Übung.
