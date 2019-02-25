@@ -1,5 +1,7 @@
 class Board {
 	constructor(numberOfPlayers, config={}) {
+		// TODO 2. pass config in beforeEach
+		// TODO 3. destructure config in parameter assignment
 		this.size = config.size || 4;
 
 		this.players = [];
@@ -28,7 +30,7 @@ class Board {
 
 describe('Board', () => {
 
-	// TODO remove duplication of game = new Board(2)
+	// TODO 1. remove duplication of game = new Board(2)
 
 	it('puts all players at position 1', () => {
 		const game = new Board(2);
@@ -62,7 +64,7 @@ describe('Board', () => {
 		expect(game.winner()).toBe(2);
 	});
 
-	// TODO remove duplication of game = new Board(1)
+	// TODO 1. remove duplication of game = new Board(1)
 
 	it('marks first player at end "4" as winner', () => {
 		const game = new Board(1);
