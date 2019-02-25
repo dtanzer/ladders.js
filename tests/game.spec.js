@@ -1,6 +1,9 @@
 class Game {
 	constructor(numberOfPlayers) {
 		this.position = [];
+		for (let i=0;i<numberOfPlayers;i++) {
+
+		}
 		this.position[0] = 1;
 		this.position[1] = 1;
 	}
