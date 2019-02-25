@@ -32,7 +32,9 @@ const player1 = {
 
 const ladders = {
 	from(start) {
-		return 7;
+		if (start === 4) {
+			return 7;
+		}
 	}
 };
 
@@ -57,6 +59,9 @@ describe('ladders', () => {
 	});
 	it('has a ladder from 4 to 7', () => {
 		expect(ladders.from(4)).toBe(7);
+	});
+	it('has no ladder from 3', () => {
+		expect(ladders.from(3)).toBeUndefined();
 	});
 });
 
