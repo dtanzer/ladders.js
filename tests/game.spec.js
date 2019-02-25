@@ -105,7 +105,12 @@ describe('game', () => {
 
 		expect(game.hasEnded()).toBe(true);
 	});
+
 });
+// test list
+// * niemand kann sich bewegen wenn es aus ist
+
+// ---------
 
 // copy existing test so it does not get reverted for new file
 // we cannot create guiding test
