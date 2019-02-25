@@ -85,10 +85,13 @@ describe('player', () => {
 
 describe('game', () => {
 	let ladders;
+	let player1;
 	let game;
 
 	beforeEach(() => {
 		game = new Game(dice);
+		player1 = new Player();
+		ladders = new Ladders();
 	});
 
 	it('exists', () => {
