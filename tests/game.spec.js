@@ -5,6 +5,10 @@ describe('game', () => {
 	it('we have a game', () => {
 		expect(game).not.toBeFalsy();
 	});
+	xit('starts, then player is at start place', () => {
+		game.start(player);
+		expect(player.place()).toBe(game.startPlace);
+	});
 });
 
 // copy existing test so it does not get reverted for new file
