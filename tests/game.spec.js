@@ -22,7 +22,7 @@ class Game {
 	}
 }
 
-const game = new Game(dice);
+let game;
 const player1 = {
 
 };
@@ -49,6 +49,11 @@ describe('player', () => {
 });
 
 describe('game', () => {
+
+	beforeEach(() => {
+		game = new Game(dice);
+	});
+
 	it('exists', () => {
 		expect(game).not.toBeFalsy();
 	});
