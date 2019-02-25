@@ -28,6 +28,9 @@ class Game {
 	}
 	nextTurn() {
 		this.players[0].place += this.dice.roll();
+		if(this.ladders.from(this.players[0].place)) {
+			this.players[0].place = this.ladders.from(this.players[0].place);
+		}
 		this.ended = this.players[0].place >= this.endPlace;
 	}
 	hasEnded() {
@@ -142,6 +145,15 @@ describe('game', () => {
 		game.nextTurn();
 
 		expect(game.hasEnded()).toBe(true);
+	});
+	it('moves player forward on ladder', () => {
+		game.start(player1);
+		dice.roll = () => 3;
+		ladders.from = () => 7;
+
+		game.nextTurn();
+
+		expect(player1.place).toBe(7);
 	});
 
 });
