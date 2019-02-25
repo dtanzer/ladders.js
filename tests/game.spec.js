@@ -101,49 +101,51 @@ describe('game', () => {
 	it('has a start place', () => {
 		expect(game.startPlace).not.toBeFalsy();
 	});
-	it('starts, then player is at start place', () => {
-		game.start(player1);
-		expect(player1.place).toBe(game.startPlace);
-	});
-	it('allows taking turns', () => {
-		game.start(player1);
-		game.nextTurn();
-	});
-	it('moves player on turn', () => {
-		game.start(player1);
-		dice.roll = () => 3;
-		const lastPlace = player1.place;
 
-		game.nextTurn();
+	describe('started', () => {
+		it('starts, then player is at start place', () => {
+			game.start(player1);
+			expect(player1.place).toBe(game.startPlace);
+		});
+		it('allows taking turns', () => {
+			game.start(player1);
+			game.nextTurn();
+		});
+		it('moves player on turn', () => {
+			game.start(player1);
+			dice.roll = () => 3;
+			const lastPlace = player1.place;
 
-		expect(player1.place).toBe(lastPlace + 3);
-		expect(game.hasEnded()).toBe(false);
+			game.nextTurn();
+
+			expect(player1.place).toBe(lastPlace + 3);
+			expect(game.hasEnded()).toBe(false);
+		});
+		it('has an end place', () => {
+			expect(game.endPlace).not.toBeFalsy();
+		});
+		it('is not ended', () => {
+			expect(game.hasEnded()).toBe(false);
+		});
+		it('ends when player is at end place', () => {
+			game.start(player1);
+			dice.roll = () => 3;
+			player1.place = game.endPlace-3;
+
+			game.nextTurn();
+
+			expect(game.hasEnded()).toBe(true);
+		});
+		it('ends when player is after end place', () => {
+			game.start(player1);
+			dice.roll = () => 3;
+			player1.place = game.endPlace - 2;
+
+			game.nextTurn();
+
+			expect(game.hasEnded()).toBe(true);
+		});
 	});
-	it('has an end place', () => {
-		expect(game.endPlace).not.toBeFalsy();
-	});
-	it('is not ended', () => {
-		expect(game.hasEnded()).toBe(false);
-	});
-	it('ends when player is at end place', () => {
-		game.start(player1);
-		dice.roll = () => 3;
-		player1.place = game.endPlace-3;
-
-		game.nextTurn();
-
-		expect(game.hasEnded()).toBe(true);
-	});
-	it('ends when player is after end place', () => {
-		game.start(player1);
-		dice.roll = () => 3;
-		player1.place = game.endPlace - 2;
-
-		game.nextTurn();
-
-		expect(game.hasEnded()).toBe(true);
-	});
-
 });
 
 // test list
