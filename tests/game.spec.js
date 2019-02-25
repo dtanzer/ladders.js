@@ -3,3 +3,6 @@ describe('foo', () => {
 		expect(true).toBe(true);
 	});
 });
+
+// copy existing test so it does not get reverted for new file
+// we cannot create guiding test
