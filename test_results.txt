@@ -1,0 +1,50 @@
+FAIL tests/game.spec.js
+  Game
+    √ starts all players at position 1
+    √ moves players with roll 1
+    √ moves players with roll 1 on taking turns
+    × marks first player at end "4" as winner (16ms)
+    × has no winner below end "4"
+
+  ● Game › marks first player at end "4" as winner
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+    Difference:
+
+      Comparing two different types of values. Expected number but received undefined.
+
+      47 | 		game.takeTurn();
+      48 | 		game.takeTurn();
+    > 49 | 		expect(game.winner()).toBe(1);
+         | 		                      ^
+      50 | 	});
+      51 | 	it('has no winner below end "4"', () => {
+      52 | 		const game = new Game(1);
+
+      at Object.toBe (tests/game.spec.js:49:25)
+
+  ● Game › has no winner below end "4"
+
+    expect(received).toBeUndefined()
+
+    Received: 1
+
+      57 | 		expect(game.winner()).toBeUndefined();
+      58 | 		game.takeTurn();
+    > 59 | 		expect(game.winner()).toBeUndefined();
+         | 		                      ^
+      60 | 	});
+      61 | });
+      62 | 
+
+      at Object.toBeUndefined (tests/game.spec.js:59:25)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 3 passed, 5 total
+Snapshots:   0 total
+Time:        3.921s
+Ran all test suites.

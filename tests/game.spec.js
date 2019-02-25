@@ -15,7 +15,8 @@ class Game {
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
 	winner() {
-		return 1;
+		if (this.players[0] == 4)
+			return 1;
 	}
 }
 
@@ -46,5 +47,15 @@ describe('Game', () => {
 		game.takeTurn();
 		game.takeTurn();
 		expect(game.winner()).toBe(1);
+	});
+	it('has no winner below end "4"', () => {
+		const game = new Game(1);
+		expect(game.winner()).toBeUndefined();
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
 	});
 });
