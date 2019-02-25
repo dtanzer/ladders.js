@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./node_modules/.bin/jest 2>&1 > test_results.txt
+./node_modules/.bin/jest --no-color 2> test_results.txt
 error=$?
 cat test_results.txt
 
