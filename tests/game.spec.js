@@ -11,7 +11,7 @@ class Game {
 	}
 	takeTurn() {
 		this.position[this.current]++;
-		this.current += 1;
+		this.current = (this.current + 1) % 2;
 	}
 }
 
@@ -31,7 +31,8 @@ describe('Game', () => {
 		const game = new Game(2);
 		game.takeTurn();
 		game.takeTurn();
-		expect(game.positionOf(1)).toBe(2);
+		game.takeTurn();
+		expect(game.positionOf(1)).toBe(3);
 		expect(game.positionOf(2)).toBe(2);
 	});
 });
