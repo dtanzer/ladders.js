@@ -31,16 +31,15 @@ const player1 = {
 };
 
 class Ladders {
-	constructor() {
-		this.x = [];
-		this.x[4] = 7;
+	constructor(links={}) {
+		this.x = links;
 	}
 	from(start) {
 		return this.x[start];
 	}
 }
 
-const ladders = new Ladders();
+const ladders = new Ladders({"4":7});
 
 describe('dice', () => {
 	it('exists', () => {
