@@ -5,6 +5,9 @@ class Game {
 	positionOf(numberOfPlayer) {
 		return 1;
 	}
+	takeTurn() {
+
+	}
 }
 
 describe('Game', () => {
@@ -15,5 +18,6 @@ describe('Game', () => {
 	});
 	it('moves players on turns', () => {
 		const game = new Game(2);
+		game.takeTurn();
 	});
 });
