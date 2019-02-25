@@ -109,3 +109,6 @@ describe('game', () => {
 // "Du tippst zu schnell, tests noch nicht fertig" --> Unser Test-script ist schon zu langsam (9s)
 // Tests auskommentieren widerspricht der Idee irgendwie?
   // einfach auskommentieren wollen wir nicht mehr machen zur Übung.
+// wir achten nicht auf Baby Steps wie wir würden, wenn wir Baby Steps machen würden.
+  // nach 2 Stunden P hofft immer noch auf compile und ist überrascht wenn nicht. 
+  // Keine Incremente im 30 Sec Bereich. Warum nicht?
