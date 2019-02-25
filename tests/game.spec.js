@@ -30,6 +30,9 @@ const player1 = {
 	// TODO sehe das Feld nicht?
 };
 
+const ladders = {
+};
+
 describe('dice', () => {
 	it('exists', () => {
 		expect(dice).not.toBeFalsy();
@@ -42,6 +45,12 @@ describe('dice', () => {
 			expect(eyes).toBeLessThanOrEqual(6);
 			expect(eyes).toBe(Math.floor(eyes));
 		}
+	});
+});
+
+describe('ladders', () => {
+	it('exists', () => {
+		expect(ladders).not.toBeFalsy();
 	});
 });
 
