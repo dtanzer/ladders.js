@@ -19,10 +19,12 @@ class Game {
 	constructor(dice, snakeAndLadders) {
 		this.dice = dice;
 		this.snakeAndLadders = snakeAndLadders;
-		this.startPlace = 1;
+
+		this.startPlace = 1; // could be from outside
 		this.endPlace = 10;
-		this.ended = false;
+
 		this.current = 0;
+		this.ended = false;
 	}
 	start(...players) { // just did it because I could ;-)
 		this.players = players;
