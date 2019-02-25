@@ -8,6 +8,7 @@ class Game {
 	constructor(dice) {
 		this.dice = dice;
 		this.startPlace = 1;
+		this.endPlace = 10;
 	}
 	start(...players) { // just did it because I could ;-)
 		this.players = players;
@@ -67,6 +68,9 @@ describe('game', () => {
 		game.nextTurn();
 
 		expect(player1.place).toBe(lastPlace + 3);
+	});
+	it('has a endplace', () => {
+		expect(game.endPlace).not.toBeFalsy();
 	});
 });
 
