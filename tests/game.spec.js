@@ -15,9 +15,9 @@ class Board {
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
 	winner() {
-		for (let i=0; i<this.players.length;i++) {
-			if (this.players[i] >= 4) {
-				return i + 1;
+		for (let player=0; player<this.players.length;player++) {
+			if (this.players[player] >= 4) {
+				return player + 1;
 			}
 		}
 	}
