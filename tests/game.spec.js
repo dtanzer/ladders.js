@@ -9,6 +9,9 @@ const game = {
 	start(player) {
 		player.place = this.startPlace;
 	},
+	nextTurn() {
+
+	},
 };
 const player1 = {
 
@@ -45,6 +48,10 @@ describe('game', () => {
 	it('starts, then player is at start place', () => {
 		game.start(player1);
 		expect(player1.place).toBe(game.startPlace);
+	});
+	it('can take turns', () => {
+		game.start(player1);
+		game.nextTurn();
 	});
 	xit('turn', () => {
 		game.start(player1);
