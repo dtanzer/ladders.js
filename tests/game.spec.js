@@ -53,6 +53,9 @@ describe('Game', () => {
 	it('has no winner below end "4"', () => {
 		const game = new Game(1);
 		expect(game.winner()).toBeUndefined();
-
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
+		game.takeTurn();
+		expect(game.winner()).toBeUndefined();
 	});
 });
