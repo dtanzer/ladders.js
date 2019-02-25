@@ -1,6 +1,8 @@
-describe('foo', () => {
-	it('bar', () => {
-		expect(true).toBe(true);
+
+describe('game', () => {
+	it('we have a game', () => {
+		const game = {};
+		expect(game).not.toBeFalsy();
 	});
 });
 
