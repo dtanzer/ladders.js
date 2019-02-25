@@ -11,6 +11,12 @@ const player1 = {
 
 };
 
+describe('dice', () => {
+	it('exists', () => {
+		expect(dice).not.toBeFalsy();
+	});
+});
+
 describe('player', () => {
 	it('exists', () => {
 		expect(player1).not.toBeFalsy();
