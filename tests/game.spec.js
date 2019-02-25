@@ -11,7 +11,7 @@ class Ladders {
 		this.links = links;
 	}
 	from(start) {
-		return this.links[start];
+		return this.links[start] || start;
 	}
 }
 
@@ -68,7 +68,7 @@ describe('ladders', () => {
 		expect(ladders.from(4)).toBe(7);
 	});
 	it('has no ladder from 3', () => {
-		expect(ladders.from(3)).toBeUndefined();
+		expect(ladders.from(3)).toBe(3);
 	});
 });
 
