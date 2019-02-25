@@ -6,7 +6,7 @@ class Board {
 		for (let player=0; player<numberOfPlayers; player++) {
 			this.players[player] = 1;
 		}
-		
+
 		this.currentPlayer = 0;
 	}
 	positionOf(player) {
@@ -83,3 +83,5 @@ describe('Board', () => {
 // Refactoren oft auf die Lösung und dann den Test hinzufügen für allgemeinen Code.
 // Oft, die Struktur die man anpeilt wird eine darunterliegende Struktur.
 // Regel? Immer nur im Test oder nur im Produktionscode was ändern. Dadurch schreibe ich Tests oft nachher.
+// Das Kata ist so stark ähnlich wie Trivia.
+// Keine besondere Kata.
