@@ -10,7 +10,8 @@ class Game {
 		return this.players[player-1];
 	}
 	takeTurn() {
-		this.players[this.currentPlayer]++;
+		this.players[this.currentPlayer] += 1;
+		
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
 }
