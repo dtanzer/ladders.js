@@ -18,19 +18,15 @@ describe('dice', () => {
 	it('exists', () => {
 		expect(dice).not.toBeFalsy();
 	});
-	for (let i = 0; i < 100; i++) {
-		it('returns numer between 1 and 6 on "roll"', () => {
+	it('returns numer between 1 and 6 on "roll"', () => {
+		for (let i = 0; i < 100; i++) {
 			const eyes = dice.roll();
 			expect(eyes).toBeGreaterThanOrEqual(1);
 			//Wir kriegen den Test auch mit 2. Assert nicht rot. Egal -> kein TDD
 			expect(eyes).toBeLessThanOrEqual(6);
-		});
-
-		it('returns only whole numbers', () => {
-			const eyes = dice.roll();
 			expect(eyes).toBe(Math.floor(eyes));
-		});
-	}
+		}
+	});
 });
 
 describe('player', () => {
