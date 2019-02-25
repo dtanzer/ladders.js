@@ -1,0 +1,9 @@
+PASS tests/foo.spec.js
+  foo
+    √ bar
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.792s
+Ran all test suites.
