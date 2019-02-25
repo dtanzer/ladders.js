@@ -9,6 +9,7 @@ class Game {
 		this.dice = dice;
 		this.startPlace = 1;
 		this.endPlace = 10;
+		this.ended = false;
 	}
 	start(...players) { // just did it because I could ;-)
 		this.players = players;
@@ -16,9 +17,10 @@ class Game {
 	}
 	nextTurn() {
 		this.players[0].place += this.dice.roll();
+		this.ended = true;
 	}
 	hasEnded() {
-		return true;
+		return this.ended;
 	}
 }
 
@@ -74,6 +76,9 @@ describe('game', () => {
 	});
 	it('has an end place', () => {
 		expect(game.endPlace).not.toBeFalsy();
+	});
+	it('is not ended', () => {
+		expect(game.hasEnded()).toBe(false);
 	});
 	it('ends when player is at end place', () => {
 		game.start(player1);
