@@ -9,12 +9,12 @@ class Game {
 		this.dice = dice;
 		this.startPlace = 1;
 	}
-	start(player) {
-		this.player = player;
-		player.place = this.startPlace;
+	start(...players) {
+		this.players = players;
+		this.players[0].place = this.startPlace;
 	}
 	nextTurn() {
-		this.player.place += this.dice.roll();
+		this.players[0].place += this.dice.roll();
 	}
 }
 
