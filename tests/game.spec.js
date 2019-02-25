@@ -18,7 +18,7 @@ describe('dice', () => {
 	it('exists', () => {
 		expect(dice).not.toBeFalsy();
 	});
-	for (let i = 0; i < 1000; i++) {
+	for (let i = 0; i < 100; i++) {
 		it('returns numer between 1 and 6 on "roll"', () => {
 			const eyes = dice.roll();
 			expect(eyes).toBeGreaterThanOrEqual(1);
@@ -70,3 +70,4 @@ describe('game', () => {
 // Schritt viel zu groß ("turn"), wir würden gerne reverten ;)
 // Angst code zu verlieren: "Dice" -> Schritt zu groß?
 	// D: "Hoffentlich committed" -> P: "Schritt zu groß"
+// "Du tippst zu schnell, tests noch nicht fertig" --> Unser Test-script ist schon zu langsam (9s)
