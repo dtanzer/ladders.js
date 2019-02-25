@@ -1,6 +1,6 @@
 const dice = {
 	roll() {
-		return 1;
+		return Math.floor(Math.random() * 6 + 1);
 	}
 };
 
