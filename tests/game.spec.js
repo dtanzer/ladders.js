@@ -22,5 +22,6 @@ describe('Game', () => {
 		const game = new Game(2);
 		game.takeTurn();
 		expect(game.positionOf(1)).toBe(2);
+		expect(game.positionOf(2)).toBe(1);
 	});
 });
