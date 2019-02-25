@@ -1,8 +1,8 @@
 class Board {
 	constructor(numberOfPlayers) {
 		this.players = [];
-		for (let i=0; i<numberOfPlayers; i++) {
-			this.players[i] = 1;
+		for (let player=0; player<numberOfPlayers; player++) {
+			this.players[player] = 1;
 		}
 		this.currentPlayer = 0;
 	}
