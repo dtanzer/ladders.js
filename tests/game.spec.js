@@ -1,6 +1,6 @@
 class Board {
-	constructor(numberOfPlayers, size=4) {
-		this.size = size;
+	constructor(numberOfPlayers, config={}) {
+		this.size = config.size || 4;
 
 		this.players = [];
 		for (let player=0; player<numberOfPlayers; player++) {
