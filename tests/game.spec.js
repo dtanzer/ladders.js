@@ -1,12 +1,12 @@
 class Game {
 	constructor(numberOfPlayers) {
-
+		this.position = 1;
 	}
 	positionOf(numberOfPlayer) {
-		return 1;
+		return this.position;
 	}
 	takeTurn() {
-
+		this.position++;
 	}
 }
 
@@ -19,5 +19,6 @@ describe('Game', () => {
 	it('moves players on turns', () => {
 		const game = new Game(2);
 		game.takeTurn();
+		expect(game.positionOf(1)).toBe(2);
 	});
 });
