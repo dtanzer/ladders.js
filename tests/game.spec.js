@@ -9,8 +9,8 @@ class Board {
 	positionOf(player) {
 		return this.players[player-1];
 	}
-	takeTurn() {
-		this.players[this.currentPlayer] += 1;
+	takeTurn(eyes = 1) {
+		this.players[this.currentPlayer] += eyes;
 
 		this.currentPlayer = (this.currentPlayer + 1) % this.players.length;
 	}
@@ -70,4 +70,4 @@ describe('Board', () => {
 // Die assertion kommt am schluss, ist das gut?
 // Tests entstehen schrittweise.
 // Refactoren oft auf die Lösung und dann den Test hinzufügen für allgemeinen Code.
-// 
+// Oft, die Struktur die man anpeilt wird eine darunterliegende Struktur.
