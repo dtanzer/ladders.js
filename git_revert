@@ -3,4 +3,4 @@
 git checkout -b broken_`date +%s`
 git stage -A
 git commit -m "broken tests"
-git checkout master
+git checkout try_1
