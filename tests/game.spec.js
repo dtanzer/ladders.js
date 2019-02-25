@@ -74,6 +74,10 @@ describe('ladders', () => {
 });
 
 describe('player', () => {
+	let player1;
+	beforeEach(()=>{
+		player1 = new Player();
+	});
 	it('exists', () => {
 		expect(player1).not.toBeFalsy();
 	});
