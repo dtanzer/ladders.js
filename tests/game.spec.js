@@ -22,13 +22,14 @@ class Game {
 		this.startPlace = 1;
 		this.endPlace = 10;
 		this.ended = false;
+		this.current = 0;
 	}
 	start(...players) { // just did it because I could ;-)
 		this.players = players;
 		players.forEach(p => p.place = this.startPlace);
 	}
 	nextTurn() {
-		const currentPlayer = this.players[0];
+		const currentPlayer = this.players[this.current];
 		currentPlayer.place = this.snakeAndLadders.from(currentPlayer.place + this.dice.roll());
 		
 		this.ended = currentPlayer.place >= this.endPlace;
