@@ -33,3 +33,4 @@ describe('game', () => {
 // we commit after comments to not lose them
 // every spell fix is a commit, yeah
 // TDDaiymi aus "Angst"
+// haben test geschrieben und dann auskommentiert und 3 schritte später erst bearbeitet -> wir haben gesehen es ist zu gross.
