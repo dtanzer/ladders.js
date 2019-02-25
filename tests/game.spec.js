@@ -16,8 +16,9 @@ class Ladders {
 }
 
 class Game {
-	constructor(dice) {
+	constructor(dice, ladders) {
 		this.dice = dice;
+		this.ladders = ladders;
 		this.startPlace = 1;
 		this.endPlace = 10;
 		this.ended = false;
@@ -28,6 +29,7 @@ class Game {
 	}
 	nextTurn() {
 		this.players[0].place += this.dice.roll();
+		this.players[0].place = this.ladders.from(this.players[0].place);
 		this.ended = this.players[0].place >= this.endPlace;
 	}
 	hasEnded() {
@@ -91,7 +93,7 @@ describe('game', () => {
 
 	beforeEach(() => {
 		ladders = new Ladders();
-		game = new Game(dice);
+		game = new Game(dice, ladders);
 		player1 = new Player();
 	});
 
@@ -144,6 +146,14 @@ describe('game', () => {
 			game.nextTurn();
 
 			expect(game.hasEnded()).toBe(true);
+		});
+		it('moves player up ladder', () => {
+			dice.roll = () => 3;
+			ladders.from = () => 7;
+
+			game.nextTurn();
+
+			expect(player1.place).toBe(7);
 		});
 	});
 });
