@@ -7,8 +7,12 @@ const dice = {
 const game = {
 	startPlace: 1,
 	start(player) {
+		this.player = player;
 		player.place = this.startPlace;
 	},
+	takeTurn() {
+		this.player.place += dice.roll();
+	}
 };
 const player1 = {
 
@@ -46,9 +50,9 @@ describe('game', () => {
 		game.start(player1);
 		expect(player1.place).toBe(game.startPlace);
 	});
-	xit('turn', () => {
+	it('turn', () => {
 		game.start(player1);
-		dice.nextRoll = 3;
+		dice.roll = () => 3;
 		const lastPlace = player1.place;
 
 		game.nextTurn();
