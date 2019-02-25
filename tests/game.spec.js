@@ -7,10 +7,11 @@ const dice = {
 const game = {
 	startPlace: 1,
 	start(player) {
+		this.player = player;
 		player.place = this.startPlace;
 	},
 	nextTurn() {
-
+		this.player.place += dice.roll();
 	},
 };
 const player1 = {
@@ -55,7 +56,7 @@ describe('game', () => {
 	});
 	xit('turn', () => {
 		game.start(player1);
-		dice.nextRoll = 3;
+		dice.roll = () => 3;
 		const lastPlace = player1.place;
 
 		game.nextTurn();
