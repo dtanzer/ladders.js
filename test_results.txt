@@ -1,0 +1,31 @@
+FAIL tests/game.spec.js
+  Game
+    × starts all players at position 1 (19ms)
+    √ moves players on turns (1ms)
+
+  ● Game › starts all players at position 1
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: undefined
+
+    Difference:
+
+      Comparing two different types of values. Expected number but received undefined.
+
+      16 | 		const game = new Game(2);
+      17 | 		expect(game.positionOf(1)).toBe(1);
+    > 18 | 		expect(game.positionOf(2)).toBe(1);
+         | 		                           ^
+      19 | 	});
+      20 | 	it('moves players on turns', () => {
+      21 | 		const game = new Game(2);
+
+      at Object.toBe (tests/game.spec.js:18:30)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        3.998s
+Ran all test suites.
