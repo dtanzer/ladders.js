@@ -1,9 +1,12 @@
 
 const game = {
 	startPlace: 1,
+	start(player) {
+		player.place = this.startPlace;
+	},
 };
 const player1 = {
-	
+
 };
 
 describe('player', () => {
@@ -19,7 +22,7 @@ describe('game', () => {
 	it('has a startplace', () => {
 		expect(game.startPlace).not.toBeFalsy();
 	});
-	xit('starts, then player is at start place', () => {
+	it('starts, then player is at start place', () => {
 		game.start(player1);
 		expect(player1.place).toBe(game.startPlace);
 	});
