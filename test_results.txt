@@ -1,0 +1,98 @@
+FAIL tests/game.spec.js
+  Board
+    × puts all players at position 1 (16ms)
+    × moves players with roll 1
+    × moves players with roll 1 on taking turns
+    × marks first player at end "4" as winner
+    × has no winner below end "4"
+    × marks second player at end "4" as winner
+
+  ● Board › puts all players at position 1
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:31:16)
+
+  ● Board › moves players with roll 1
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:36:16)
+
+  ● Board › moves players with roll 1 on taking turns
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:44:16)
+
+  ● Board › marks first player at end "4" as winner
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:54:16)
+
+  ● Board › has no winner below end "4"
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:63:16)
+
+  ● Board › marks second player at end "4" as winner
+
+    TypeError: Cannot match against 'undefined' or 'null'.
+
+      1 | class Board {
+    > 2 | 	constructor(numberOfPlayers, {size=4}) {
+        | 	           ^
+      3 | 		this.size = size;
+      4 | 
+      5 | 		this.players = [];
+
+      at new Board (tests/game.spec.js:2:13)
+      at Object.it (tests/game.spec.js:71:16)
+
+Test Suites: 1 failed, 1 total
+Tests:       6 failed, 6 total
+Snapshots:   0 total
+Time:        3.857s
+Ran all test suites.

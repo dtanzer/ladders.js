@@ -1,5 +1,5 @@
 class Board {
-	constructor(numberOfPlayers, size=4) {
+	constructor(numberOfPlayers, {size=4}) {
 		this.size = size;
 
 		this.players = [];
