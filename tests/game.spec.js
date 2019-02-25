@@ -39,8 +39,6 @@ class Ladders {
 	}
 }
 
-const ladders = new Ladders({"4":7});
-
 describe('dice', () => {
 	it('exists', () => {
 		expect(dice).not.toBeFalsy();
@@ -57,6 +55,12 @@ describe('dice', () => {
 });
 
 describe('ladders', () => {
+	let ladders;
+	
+	beforeEach(()=>{
+		ladders = new Ladders({"4":7});
+	});
+
 	it('exists', () => {
 		expect(ladders).not.toBeFalsy();
 	});
