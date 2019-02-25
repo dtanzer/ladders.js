@@ -1,6 +1,5 @@
-describe('foo', () => {
-	it('bar', () => {
-		expect(true).toBeTruthy();
+describe('Game', () => {
+	it('player 1 starts game at position 1', () => {
 		
 	});
 });
